@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aryan Jain – NSE Academy Certificates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    --bg: #eceaf4;
+    --surface: #ffffff;
+    --ink: #1f1b4d;
+    --muted: #5d5a85;
+    --line: #cfcce3;
+    --accent: #25205a;
+    --on-accent: #ffffff;
+    --font: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12102b;
+      --surface: #1d1a42;
+      --ink: #ecebfa;
+      --muted: #a9a6d0;
+      --line: #36326b;
+      --accent: #ecebfa;
+      --on-accent: #1d1a42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12102b;
+    --surface: #1d1a42;
+    --ink: #ecebfa;
+    --muted: #a9a6d0;
+    --line: #36326b;
+    --accent: #ecebfa;
+    --on-accent: #1d1a42;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    line-height: 1.5;
+  }
+  .page { max-width: 1120px; margin: 0 auto; padding: 32px 20px 56px; }
+
+  header h1 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 500; margin: 0 0 4px; letter-spacing: -0.01em; }
+  header p { margin: 0; color: var(--muted); }
+
+  /* Tabs */
+  .tabs {
+    display: flex; gap: 4px; margin: 28px 0 0;
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+  }
+  .tab {
+    appearance: none; background: none; border: 0;
+    font: inherit; font-weight: 500; color: var(--muted);
+    padding: 12px 18px; cursor: pointer; white-space: nowrap;
+    border-bottom: 3px solid transparent; margin-bottom: -1px;
+    text-align: left;
+  }
+  .tab small { display: block; font-weight: 400; font-size: .78rem; opacity: .85; }
+  .tab:hover { color: var(--ink); }
+  .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: #e8542a; }
+  .tab:focus-visible { outline: 2px solid #e8542a; outline-offset: -2px; border-radius: 4px; }
+
+  .panel { padding-top: 24px; }
+  .panel[hidden] { display: none; }
+
+  /* Certificate */
+  .scroller { overflow-x: auto; padding-bottom: 8px; }
+  .cert-wrap { min-width: 760px; container-type: inline-size; }
+  .cert {
+    --navy: #25205a; --text: #2d2a6e;
+    position: relative; width: 100%; aspect-ratio: 1300 / 920;
+    background: #fff; color: var(--text);
+    border: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 10px 30px rgba(20, 16, 70, .18);
+    overflow: hidden; font-weight: 300;
+  }
+  .band { position: absolute; background: var(--navy); color: #fff; display: flex; align-items: center; font-weight: 500; font-size: 1.05cqw; }
+  .band.top, .band.bottom { left: 3.6%; right: 1.9%; height: 2.6%; justify-content: space-around; }
+  .band.top { top: 3.2%; } .band.bottom { bottom: 2.7%; }
+  .band.left, .band.right { top: 7%; bottom: 7%; width: 2%; flex-direction: column; justify-content: space-around; }
+  .band.left { left: 0.4%; } .band.right { right: 0; }
+  .band.left span, .band.right span { writing-mode: vertical-rl; transform: rotate(180deg); }
+  .dot { display: inline-block; width: .9cqw; height: .9cqw; border-radius: 50%; background: #f26a2e; margin-right: .35cqw; vertical-align: -.1cqw; }
+
+  .logo-nse { position: absolute; left: 6.3%; top: 9%; line-height: 1; }
+  .logo-nse .mark { display: inline-flex; vertical-align: top; width: 4.6cqw; height: 4.6cqw; margin-right: .8cqw;
+    background: conic-gradient(from 20deg, #e8202a 0 25%, #eeab1c 0 50%, #e8542a 0 75%, #25205a 0);
+    clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); }
+  .logo-nse .word { display: inline-block; font-weight: 500; font-size: 5cqw; color: var(--navy); letter-spacing: -.02em; }
+  .logo-nse .sub { display: block; margin-left: 5.4cqw; margin-top: -.6cqw; font-size: 1.7cqw; font-weight: 400; color: var(--navy); }
+
+  .logo-emp { position: absolute; right: 6%; top: 9.5%; text-align: left; font-weight: 500; color: #333; line-height: 1.1; }
+  .logo-emp .bulb { display: inline-block; width: 2.6cqw; height: 3.6cqw; border-radius: 50% 50% 40% 40%;
+    background: conic-gradient(#d9342b 0 25%, #f0a81d 0 50%, #3b86c6 0 75%, #4aa84a 0); vertical-align: middle; margin-right: .6cqw; }
+  .logo-emp .t { display: inline-block; vertical-align: middle; font-size: 2.3cqw; }
+  .logo-emp .t small { display: block; font-size: 1.6cqw; }
+
+  .content { position: absolute; left: 31.5%; top: 22%; right: 12%; }
+  .content h2 { margin: 0; font-weight: 400; font-size: 4.6cqw; line-height: 1.1; letter-spacing: -.005em; }
+  .bar { display: flex; height: .85cqw; width: 46.4cqw; max-width: 100%; margin: 2.3cqw 0 2.4cqw; }
+  .bar i:nth-child(1) { width: 12%; background: #25205a; }
+  .bar i:nth-child(2) { width: 23%; background: #e8202a; }
+  .bar i:nth-child(3) { width: 32%; background: #e8542a; }
+  .bar i:nth-child(4) { width: 33%; background: #eeab1c; }
+  .content p { margin: 0 0 1.4cqw; font-size: 1.45cqw; }
+  .content .name { font-size: 2.9cqw; margin: .4cqw 0 1.5cqw; }
+  .content .program { font-size: 2.15cqw; margin-bottom: 1.5cqw; }
+  sup { font-size: .6em; line-height: 0; }
+
+  .foot-left { position: absolute; left: 5.8%; bottom: 10.5%; font-size: 1.3cqw; font-weight: 400; }
+  .foot-left p { margin: 0 0 .6cqw; }
+  .foot-left em { display: block; font-weight: 500; font-size: 1.15cqw; line-height: 1.35; margin-top: 1cqw; color: #1f1b4d; }
+
+  .sig { position: absolute; bottom: 10.5%; width: 17%; font-size: 1.35cqw; }
+  .sig.a { left: 31.5%; } .sig.b { left: 68.3%; }
+  .sig .ink { font-family: "Caveat", "Segoe Script", cursive; font-size: 3cqw; line-height: 1; height: 4.2cqw; color: #1a1a1a; font-weight: 500; transform: rotate(-4deg); transform-origin: left bottom; }
+  .sig .rule { border-top: 1.5px solid var(--navy); margin: .4cqw 0 .6cqw; }
+  .sig b { display: block; font-weight: 400; font-size: 1.5cqw; margin-bottom: 1.1cqw; }
+  .sig span { display: block; margin-bottom: 1.1cqw; font-size: 1.3cqw; }
+
+  .meta { margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 6px 28px; color: var(--muted); font-size: .92rem; }
+  .meta b { color: var(--ink); font-weight: 500; }
+
+  @media print {
+    body { background: #fff; }
+    .tabs, header p { display: none; }
+    .panel[hidden] { display: block; page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Aryan Jain</h1>
+    <p>Certificates of completion from NSE Academy and Empirical F&amp;M Academy</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Certificates">
+    <button class="tab" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true">Futures &amp; Options<small>June 2021</small></button>
+    <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false" tabindex="-1">Index Trading<small>July 2022</small></button>
+  </div>
+
+  <div id="panels"></div>
+</div>
+
+<script>
+  // Order: oldest first, so the tabs read as a timeline.
+  var certs = [
+    {
+      program: "Training Program on Future &amp; Option Trading Strategies",
+      dates: "from 08<sup>th</sup> June 2021 to 11<sup>th</sup> June 2021.",
+      issued: "11<sup>th</sup> June, 2021",
+      meta: ["Course dates: 8–11 June 2021", "Issued: 11 June 2021"]
+    },
+    {
+      program: "Training Program on Index Trading Strategies",
+      dates: "from 29<sup>th</sup> to 31<sup>st</sup> July, 2022.",
+      issued: "5<sup>th</sup> August, 2022",
+      meta: ["Course dates: 29–31 July 2022", "Issued: 5 August 2022"]
+    }
+  ];
+
+  function bandText(n) {
+    var s = "";
+    for (var i = 0; i < n; i++) s += '<span><i class="dot"></i>NSE</span>';
+    return s;
+  }
+
+  function renderCert(c) {
+    return '' +
+    '<div class="scroller"><div class="cert-wrap"><div class="cert">' +
+      '<div class="band top">' + bandText(10) + '</div>' +
+      '<div class="band bottom">' + bandText(10) + '</div>' +
+      '<div class="band left">' + bandText(7) + '</div>' +
+      '<div class="band right">' + bandText(7) + '</div>' +
+      '<div class="logo-nse"><span class="mark"></span><span class="word">NSE</span><span class="sub">Academy</span></div>' +
+      '<div class="logo-emp"><span class="bulb"></span><span class="t">Empirical<small>F&amp;M Academy</small></span></div>' +
+      '<div class="content">' +
+        '<h2>Certificate of Completion</h2>' +
+        '<div class="bar"><i></i><i></i><i></i><i></i></div>' +
+        '<p>This is to certify that</p>' +
+        '<p class="name">Aryan Jain</p>' +
+        '<p>has successfully completed</p>' +
+        '<p class="program">' + c.program + '</p>' +
+        '<p>conducted jointly by NSE Academy Limited and Empirical F &amp; M Academy</p>' +
+        '<p>' + c.dates + '</p>' +
+      '</div>' +
+      '<div class="foot-left"><p>Date: ' + c.issued + '</p><p>Place: Mumbai</p>' +
+        '<em>NSE Academy Limited is a<br>wholly owned subsidiary of NSE</em></div>' +
+      '<div class="sig a"><div class="ink">Abhilash Misra</div><div class="rule"></div><b>Abhilash Misra</b><span>Authorized Signatory</span><span>NSE Academy Limited</span></div>' +
+      '<div class="sig b"><div class="ink">Rajendra Sharma</div><div class="rule"></div><b>Rajendra Sharma</b><span>Director</span><span>Empirical F &amp; M Academy</span></div>' +
+    '</div></div></div>' +
+    '<div class="meta">' + c.meta.map(function (m) {
+      var p = m.split(": ");
+      return '<span><b>' + p[0] + ':</b> ' + p[1] + '</span>';
+    }).join("") + '<span><b>Place:</b> Mumbai</span></div>';
+  }
+
+  var host = document.getElementById("panels");
+  certs.forEach(function (c, i) {
+    var p = document.createElement("section");
+    p.className = "panel";
+    p.id = "panel-" + i;
+    p.setAttribute("role", "tabpanel");
+    p.setAttribute("aria-labelledby", "tab-" + i);
+    p.tabIndex = 0;
+    if (i !== 0) p.hidden = true;
+    p.innerHTML = renderCert(c);
+    host.appendChild(p);
+  });
+
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+
+  function select(i, focus) {
+    tabs.forEach(function (t, j) {
+      var on = i === j;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById("panel-" + j).hidden = !on;
+    });
+    if (focus) tabs[i].focus();
+    try { history.replaceState(null, "", "#" + i); } catch (e) {}
+  }
+
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { select(i); });
+    t.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); select((i + 1) % tabs.length, true); }
+      if (e.key === "ArrowLeft")  { e.preventDefault(); select((i - 1 + tabs.length) % tabs.length, true); }
+      if (e.key === "Home") { e.preventDefault(); select(0, true); }
+      if (e.key === "End")  { e.preventDefault(); select(tabs.length - 1, true); }
+    });
+  });
+
+  var start = parseInt((location.hash || "").slice(1), 10);
+  if (start >= 0 && start < tabs.length) select(start);
+</script>
+</body>
+</html>
